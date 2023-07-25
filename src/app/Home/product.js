@@ -17,7 +17,7 @@ export default function Product() {
                     <div>
                         <h3 className="text-[#100707] font-bold text-2xl">In City Wheels Electric Bike</h3>
                         <p className='text-[#676767] font-semibold text-lg'>$1,499.00</p>
-                        <Link href="*" ><button className="btn bg-[#1A2A49] hover:bg-[#EC6861] w-full mt-6 lg:hidden Electric-btn text-white">Add to cart</button></Link>
+                        <Link href="/productdetails" ><button className="btn bg-[#1A2A49] hover:bg-[#EC6861] w-full mt-6 lg:hidden Electric-btn text-white">Add to cart</button></Link>
                     </div>
                     
                 </div>)
