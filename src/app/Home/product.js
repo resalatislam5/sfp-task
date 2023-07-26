@@ -10,7 +10,7 @@ export default function Product() {
             </div>
         <div className='grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 xl:absolute gap-5 xl:gap-0 '>
             {
-                [...Array(4)].map(e => <div  className='2xl:w-[400px] xl:w-[19rem]  w-80 2xl:h-[448px] lg:hover:h-[512px] lg:hover:bg-white lg:hover:shadow-lg p-4 bg-[#F9F9F9] rounded-xl Electric mx-auto'>
+                [...Array(4)].map((e,i) => <div key={i}  className='2xl:w-[400px] xl:w-[19rem]  w-80 2xl:h-[448px] lg:hover:h-[512px] lg:hover:bg-white lg:hover:shadow-lg p-4 bg-[#F9F9F9] rounded-xl Electric mx-auto'>
                     <div className='mb-10 mt-7'>
                         <Image src={bike} alt="" />
                     </div>

@@ -1,9 +1,12 @@
 "use client"
+import Image from "next/image";
 import { useState } from "react";
 import { FaFacebook, FaTwitterSquare, FaPen  } from "react-icons/fa";
 import { AiFillInstagram, AiFillYoutube,AiOutlineDislike,AiOutlineLike  } from "react-icons/ai";
 import { BsCheck2Circle,BsShareFill,BsFillCalendarFill   } from "react-icons/bs";
 // import ReactStars from 'react-rating-stars-component';
+import vactorImg from '../ass/banner.png';
+import bikeImg from '../ass/bikeImg.jpeg';
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
@@ -18,9 +21,13 @@ import ReactStars from "react-stars";
 
 
 
-export default function productDetails() {
+export default function ProductDetails() {
   const [review, setReview] = useState(false)
   const [newRating, setNewRating] = useState()
+
+  const [order,setOrder] = useState(1)
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+
   const ratingChanged = (newRating) => {
       setNewRating(newRating);
     };
@@ -31,8 +38,6 @@ export default function productDetails() {
     };
     console.log(Boolean(newRating))
     // sider 
-      const [order,setOrder] = useState(1)
-      const [thumbsSwiper, setThumbsSwiper] = useState(null);
       const handleMinus = () =>{
           if(order === 0){
               return
@@ -64,8 +69,8 @@ export default function productDetails() {
         className="mySwiper2 2xl:w-[62.5rem] w-80 xl:w-[78rem] lg:w-[60rem] md:w-[40rem] sm:w-[35rem] 2xl:h-[33rem] mb-10"
       >
         {
-          [...Array(10)].map(e =><SwiperSlide>
-            <img className="lg:w-[400px] md:w-96 w-80 lg:h-[528px] mx-auto" src="https://images.pexels.com/photos/2116475/pexels-photo-2116475.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""/>
+          [...Array(10)].map((e,i) =><SwiperSlide key={i}>
+            <Image className="lg:w-[400px] md:w-96 w-80 lg:h-[528px] mx-auto" src={bikeImg} alt=""/>
           </SwiperSlide>)
         }
 
@@ -81,8 +86,8 @@ export default function productDetails() {
         className="mySwiper"
       >
         {
-          [...Array(10)].map(e =><SwiperSlide>
-            <img className="lg:w-[180px] w-32 lg:h-[165px]" src="https://images.pexels.com/photos/2116475/pexels-photo-2116475.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""/>
+          [...Array(10)].map((e,i) =><SwiperSlide key={i}>
+            <Image className="lg:w-[180px] w-32 lg:h-[165px]" src={bikeImg} alt=""/>
           </SwiperSlide>)
         }
       </Swiper>
@@ -163,12 +168,12 @@ export default function productDetails() {
                     }
                  </div>
                  <div className='mt-5'>
-                 {[...Array(9)].map(e =><div>
+                 {[...Array(9)].map((e,i) =><div key={i}>
                     <div className='rounded-2xl overflow-hidden py-5'>
                         <div className='flex gap-5'>
                             <div className="avatar online">
                                 <div className="w-[60px] rounded-full">
-                                    <img src="https://static.vecteezy.com/system/resources/thumbnails/002/002/403/small/man-with-beard-avatar-character-isolated-icon-free-vector.jpg" alt=''/>
+                                    <Image src={vactorImg} alt=''/>
                                 </div>
                             </div>
                             <div className='flex flex-col justify-center'>
@@ -188,7 +193,7 @@ export default function productDetails() {
                         </div>
                         <div className='mt-8'>
                             <h3 className='text-[#100707] text-2xl font-semibold'>Love my bike! I have</h3>
-                            <p className='text-[#100707] text-lg'>Love my bike! I have bad knees and the best thing about it that I didn't expect is how easy the handle throttle makes getting on the bike! Wonderful! I am riding much more frequently than before when I had a regular bike.</p>
+                            <p className='text-[#100707] text-lg'>Love my bike! I have bad knees and the best thing about it that I {"didn't"} expect is how easy the handle throttle makes getting on the bike! Wonderful! I am riding much more frequently than before when I had a regular bike.</p>
                             <div className='flex justify-between mx-5'>
                                 <div className='flex gap-5 mt-3'>
                                     <p className="flex items-center gap-3"><BsShareFill /> Share</p>
